@@ -3,7 +3,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const swaggerUi = require('swagger-ui-express')
 
-const routes = require('./infra/express/Routes');
+const routes = require('./Routes');
 
 const app = express();
 
