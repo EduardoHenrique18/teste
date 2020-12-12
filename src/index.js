@@ -12,7 +12,7 @@ const swaggerDocument = require('../swagger.json')
 app.use(cors());
 
 const uri = process.env.ATLAS_URI||'mongodb://edu:1123581321@cluster0-shard-00-00.ubafb.mongodb.net:27017,cluster0-shard-00-01.ubafb.mongodb.net:27017,cluster0-shard-00-02.ubafb.mongodb.net:27017/test?ssl=true&replicaSet=atlas-fwpg8v-shard-0&authSource=admin&retryWrites=true&w=majority'
-const PORT = process.env.port||'8080'
+const PORT = process.env.PORT||'8080'
 
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false }).catch(err => console.log(err));
 
