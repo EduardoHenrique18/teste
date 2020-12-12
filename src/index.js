@@ -11,7 +11,6 @@ const swaggerDocument = require('../swagger.json')
 
 app.use(cors());
 
-var port = process.env.PORT || 8080;
 uri = process.env.ATLAS_URI || '';
 
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false }).catch(err => console.log(err));
@@ -22,4 +21,6 @@ app.use('/apiDocs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
 app.use(routes);
 
-app.listen(port);
+app.listen(process.env.PORT || 8080, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
